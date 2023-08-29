@@ -1,0 +1,56 @@
+[
+   {
+      
+      "name": "maram",
+      "salary": 1000,
+	  "department":"IT"
+	  "gender":"F"
+   },
+   { "name": "Ahmed",
+      "salary": 3000,
+	  "department":"IT"
+	  "gender":"M"
+   },
+   { "name": "Lama",
+      "salary": 1000,
+	  "department":"CS"
+	  "gender":"F"
+   },
+    "name": "Bader",
+      "salary": 1500,
+	  "department":"HR"
+	    "gender":"M"
+   },
+   { "name": "Manal",
+      "salary": 2000,
+	  "department":"HR"
+	  "gender":"F"
+   },
+    { "name": "Ali",
+      "salary": 1400,
+	  "department":"sales"
+	  "gender":"M"
+   },
+    { "name": "Sara",
+      "salary": 1400,
+	  "department":"sales"
+	  "gender":"F"
+   },
+   { "name": "Nada",
+      "salary": 4500,
+	  "department":"IT"
+	  "gender":"F"
+   },
+   { "name": "Areej",
+      "salary": 10000,
+	  "department":"PM"
+	  "gender":"F"
+   },
+   { "name": "Bander",
+      "salary":2000,
+	  "department":"IT"
+	  "gender":"M"
+   
+      
+   }
+]

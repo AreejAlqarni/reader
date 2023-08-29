@@ -1,0 +1,62 @@
+<employeelist>
+<emplooyee>
+<name>   Maram    </name>
+<salary>   1000   </salary>
+<department>  IT </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Ahmed   </name>
+<salary>   3000   </salary>
+<department>  IT </department>
+<gender>     M  </gender>
+</emplooyee>
+<emplooyee>
+<name>   Lama   </name>
+<salary>   1000   </salary>
+<department>  CS </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Bader  </name>
+<salary>   1500   </salary>
+<department>  HR </department>
+<gender>     M  </gender>
+</emplooyee>
+<emplooyee>
+<name>   Manal   </name>
+<salary>   2000   </salary>
+<department>  HR </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Ali  </name>
+<salary>   1400   </salary>
+<department>  Sales </department>
+<gender>     M  </gender>
+</emplooyee>
+<emplooyee>
+<name>   Sara   </name>
+<salary>   1400   </salary>
+<department>  Sales </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Nada   </name>
+<salary>   4500   </salary>
+<department>  IT </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Areej   </name>
+<salary>   10000   </salary>
+<department>  PM </department>
+<gender>     F   </gender>
+</emplooyee>
+<emplooyee>
+<name>   Bander   </name>
+<salary>   2000   </salary>
+<department>  IT </department>
+<gender>     M  </gender>
+</emplooyee>
+</employeelist>
