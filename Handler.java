@@ -4,17 +4,22 @@
  * and open the template in the editor.
  */
 
+import com.stc.csvReader;
+import com.stc.jsonReader;
+import com.stc.stcReader;
+import com.stc.xmlReader;
+
 /**
  *
  * @author HP
  */
 public class Handler {
-     public static stcReader getstcReader(String fileName) {
-        if (fileName.endsWith(".xml")) {
+    public static stcReader getstcReader(String filetype) {
+        if (filetype.equalsIgnoreCase("xml")) {
             return new xmlReader();
-        } else if (fileName.endsWith(".csv")) {
+        } else if (filetype.equalsIgnoreCase("csv")) {
             return new csvReader();
-        } else if (fileName.endsWith(".json")) {
+        } else if (filetype.equalsIgnoreCase("json")) {
             return new jsonReader();
         } else {
             return null;
