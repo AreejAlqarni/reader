@@ -1,3 +1,5 @@
+package com.stc;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -5,7 +7,7 @@ import java.util.Scanner;
 
 public class csvReader implements stcReader{
     @Override
-    public void parsee( File pathFile ) throws FileNotFoundException {
+    public ArrayList<unifiedFormat> parsee(File pathFile ) throws FileNotFoundException {
         ArrayList<unifiedFormat> employeelist = new ArrayList<>();
         File employeefile = new File(pathFile.toURI());
         Scanner SCAN = new Scanner(employeefile);
@@ -23,14 +25,16 @@ public class csvReader implements stcReader{
                     unifiedFormat imp = new unifiedFormat(name, salary, department, gender);
                     employeelist.add(imp);
                     System.out.println(employeelist);
+
                 }
             }
         }
 
 
+        return employeelist;
     }
 
 
-    }
+}
 
 
