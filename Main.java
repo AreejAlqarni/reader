@@ -2,10 +2,7 @@ package com.stc;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 import static java.lang.Integer.MIN_VALUE;
 
@@ -13,6 +10,10 @@ import static java.lang.Integer.MIN_VALUE;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+        sqlreader databaseHandler = new sqlreader();
+        databaseHandler.conectdatabase("stc_reader", "postgres", "Ah1411@@");
+
+
         FileProcessor fileProcessor = new FileProcessor();
 
         File folder = new File("C:\\Users\\HP\\Desktop\\files");
@@ -39,63 +40,63 @@ public class Main {
                     stcReader reader = Handler.getstcReader(fileExtension);
                     assert reader != null;
                     employeelist = reader.parsee(new File(file.getPath()));
-                    // }
-
-
-                    // find the employee with the highest salary:
-                    unifiedFormat highestSalaryEmployee = null;
-                    int maxSalary = MIN_VALUE;
-
-                    for (unifiedFormat employee : employeelist) {
-                        if (employee.getSalary() > maxSalary) {
-                            maxSalary = employee.getSalary();
-                            highestSalaryEmployee = employee;
-                        }
-                    }
-
-                    if (highestSalaryEmployee != null) {
-                        System.out.println("Employee with the highest salary: " +
-                                Objects.requireNonNull(highestSalaryEmployee).getName() + " ($" + highestSalaryEmployee.getSalary() + ")");
-                    } else {
-                        System.out.println("No employees found.");
-                    }
-
-                    // find which department has more employee
-                    Map<String, Integer> departmentCounts = new HashMap<>();
-
-                    for (unifiedFormat employee : employeelist) {
-                        String department = employee.getDepartment();
-                        departmentCounts.put(department, departmentCounts.getOrDefault(department, 0) + 1);
-                    }
-
-                    String highestDepartment = "";
-                    int highestCount = 0;
-
-                    for (Map.Entry<String, Integer> entry : departmentCounts.entrySet()) {
-                        if (entry.getValue() > highestCount) {
-                            highestCount = entry.getValue();
-                            highestDepartment = entry.getKey();
-                        }
-                    }
-
-                    System.out.println("Department with the highest employees: " + highestDepartment);
-
-
-                    // the of number M and F .
-                    Map<String, Integer> genderCountMap = new HashMap<>();
-
-                    for (unifiedFormat employee : employeelist) {
-                        String gender = employee.getGender();
-                        genderCountMap.put(gender, genderCountMap.getOrDefault(gender, 0) + 1);
-                    }
-
-
-                    for (Map.Entry<String, Integer> entry : genderCountMap.entrySet()) {
-                        System.out.println("Gender: " + entry.getKey() + ", Count: " + entry.getValue());
-                    }
-
-
                 }
+
+                employeelist= (ArrayList<unifiedFormat>) sqlreader.readerdatabase();
+
+                // find the employee with the highest salary:
+                unifiedFormat highestSalaryEmployee = null;
+                int maxSalary = MIN_VALUE;
+
+                for (unifiedFormat employee : employeelist) {
+                    if (employee.getSalary() > maxSalary) {
+                        maxSalary = employee.getSalary();
+                        highestSalaryEmployee = employee;
+                    }
+                }
+
+                if (highestSalaryEmployee != null) {
+                    System.out.println("Employee with the highest salary: " +
+                            Objects.requireNonNull(highestSalaryEmployee).getName() + " ($" + highestSalaryEmployee.getSalary() + ")");
+                } else {
+                    System.out.println("No employees found.");
+                }
+
+                // find which department has more employee
+                Map<String, Integer> departmentCounts = new HashMap<>();
+
+                for (unifiedFormat employee : employeelist) {
+                    String department = employee.getDepartment();
+                    departmentCounts.put(department, departmentCounts.getOrDefault(department, 0) + 1);
+                }
+
+                String highestDepartment = "";
+                int highestCount = 0;
+
+                for (Map.Entry<String, Integer> entry : departmentCounts.entrySet()) {
+                    if (entry.getValue() > highestCount) {
+                        highestCount = entry.getValue();
+                        highestDepartment = entry.getKey();
+                    }
+                }
+
+                System.out.println("Department with the highest employees: " + highestDepartment);
+
+
+                // the of number M and F .
+                Map<String, Integer> genderCountMap = new HashMap<>();
+
+                for (unifiedFormat employee : employeelist) {
+                    String gender = employee.getGender();
+                    genderCountMap.put(gender, genderCountMap.getOrDefault(gender, 0) + 1);
+                }
+
+
+                for (Map.Entry<String, Integer> entry : genderCountMap.entrySet()) {
+                    System.out.println("Gender: " + entry.getKey() + ", Count: " + entry.getValue());
+                }
+
+
             }
         }
     }
